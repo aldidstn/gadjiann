@@ -6,6 +6,8 @@ import { Switch, Route, Link } from "react-router-dom"
 import Logo from "./assets/logo.png"
 import Profile from "./assets/profile.png"
 import Employee from './pages/employee';
+import Home from "./pages/home"
+import Attendance from "./pages/attendance"
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
             position: "fixed",
             width: "100%",
             backgroundColor: "white",
-            zIndex:"9999"
+            zIndex: "9999"
           }} id="dekstop-view">
           <Container className="navbar-top" style={{ padding: "0" }} className="d-flex justify-content-between">
             <Navbar.Brand href="#home"><img src={Logo} style={{ width: "150px", padding: "10px 24px" }} alt="gadjian" /></Navbar.Brand>
@@ -32,13 +34,13 @@ function App() {
             position: "fixed",
             width: "100%",
             backgroundColor: "white",
-            zIndex:"9999"
+            zIndex: "9999"
           }} id="mobile-view">
           <Container className="navbar-top" style={{ padding: "0" }} className="d-flex justify-content-between">
             <Navbar.Brand href="#home"><img src={Logo} style={{ width: "150px", padding: "10px 24px" }} alt="gadjian" /></Navbar.Brand>
             <Nav>
               <span style={{ padding: "20px" }}>Hello, Gadjian User!</span>
-              <img src={Profile} style={{ width:"70px",height:"70px", padding: " 10px 24px 10px 0" }} />
+              <img src={Profile} style={{ width: "70px", height: "70px", padding: " 10px 24px 10px 0" }} />
             </Nav>
           </Container>
         </Navbar>
@@ -69,6 +71,12 @@ function App() {
               <Switch>
                 <Route path="/employee">
                   <Employee />
+                </Route>
+                <Route path="/attendance">
+                  <Attendance />
+                </Route>
+                <Route path="/">
+                  <Home />
                 </Route>
               </Switch>
             </div>
